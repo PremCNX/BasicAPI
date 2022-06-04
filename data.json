@@ -17,5 +17,11 @@
         "subtitle":"Tools สำหรับออกแบบ UI ของ Google",
         "img_url":"https://miro.medium.com/max/1400/1*A7MrOAPcertvtPXJPrP8Lw.png",
         "detail":"Flutter คือ Framework ที่ใช้สร้าง UI สำหรับ mobile application ที่สามารถทำงานข้ามแพลตฟอร์มได้ทั้ง iOS และ Android ในเวลาเดียวกัน โดยภาษาที่ใช้ใน Flutter นั้นจะเป็นภาษา dart ซึ่งถูกพัฒนาโดย Google และที่สำคัญคือเป็น open source ที่สามารถใช้งานได้แบบฟรี ๆ อีกด้วย"
+    },
+        {
+        "title":"Test คือ ?",
+        "subtitle":"Tools สำหรับออกแบบ UI ของ Google",
+        "img_url":"https://miro.medium.com/max/1400/1*A7MrOAPcertvtPXJPrP8Lw.png",
+        "detail":"Flutter คือ Framework ที่ใช้สร้าง UI สำหรับ mobile application ที่สามารถทำงานข้ามแพลตฟอร์มได้ทั้ง iOS และ Android ในเวลาเดียวกัน โดยภาษาที่ใช้ใน Flutter นั้นจะเป็นภาษา dart ซึ่งถูกพัฒนาโดย Google และที่สำคัญคือเป็น open source ที่สามารถใช้งานได้แบบฟรี ๆ อีกด้วย"
     }
 ]

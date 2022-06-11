@@ -1,7 +1,9 @@
 import 'dart:convert';
-
 import 'package:flutter/material.dart';
 import 'package:layout/pages/detail.dart';
+
+import 'package:http/http.dart' as http;
+import 'dart:async';
 
 class HomePage extends StatefulWidget {
   //const HomePage({ Key? key }) : super(key: key);
@@ -22,19 +24,24 @@ class _HomePageState extends State<HomePage> {
       body: Padding(
           padding: const EdgeInsets.all(8.0),
           child: FutureBuilder(
-            builder: (context, snapshort) {
-              var data = json.decode(
-                  snapshort.data.toString()); // [{คอมพิวเตอร์คืออะไร...},{},{}]
+            builder: (context, AsyncSnapshot snapshort) {
+              //var data = json.decode(
+              //    snapshort.data.toString()); // [{คอมพิวเตอร์คืออะไร...},{},{}]
+
               return ListView.builder(
                 itemBuilder: (BuildContext, int index) {
-                  return Mybox(data[index]['title'], data[index]['subtitle'],
-                      data[index]['img_url'], data[index]['detail']);
+                  return Mybox(
+                      snapshort.data[index]['title'],
+                      snapshort.data[index]['subtitle'],
+                      snapshort.data[index]['img_url'],
+                      snapshort.data[index]['detail']);
                 },
-                itemCount: data.length,
+                itemCount: snapshort.data.length,
               );
             },
-            future:
-                DefaultAssetBundle.of(context).loadString('assets/data.json'),
+            //future:
+            //    DefaultAssetBundle.of(context).loadString('assets/data.json'),
+            future: getData(),
           )),
     );
   }
@@ -88,5 +95,14 @@ class _HomePageState extends State<HomePage> {
         ],
       ),
     );
+  }
+
+  Future getData() async {
+    //https://raw.githubusercontent.com/PremCNX/BasicAPI/main/data.json
+    var url = Uri.https(
+        'raw.githubusercontent.com', '/PremCNX/BasicAPI/main/data.json');
+    var response = await http.get(url);
+    var result = json.decode(response.body);
+    return result;
   }
 }
